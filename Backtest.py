@@ -12,7 +12,7 @@ portfolio = {'UPRO': 0.55, 'TMF' : 0.45}
 
 ###Check if portfolio values add up to 1, if not raise exception
 if sum(portfolio.values()) != 1:
-    raise Exception('Portfolio values should add up to 1')
+    raise Exception('Portfolio weight values should add up to 1')
 
 ###Start with SPY 
 adj_close = reader.DataReader(name = 'SPY',data_source = 'yahoo', start = start_date, end = end_date)['Adj Close'].reset_index().rename(columns={'Adj Close' : 'SPY Adj Close'})
