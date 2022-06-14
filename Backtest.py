@@ -41,7 +41,11 @@ for i in portfolio:
     
 ###Print start and end date of dataframe, which may differ from initial inputs based on availability of data. Also minus the first date because we removed that because return is null
 print('AVERAGE YEARLY RETURNS BETWEEN {} AND {}'.format(adj_close['Date'].iloc[0].strftime('%Y-%m-%d'), adj_close['Date'].iloc[-1].strftime('%Y-%m-%d')))
-
+print("--------------------------------")
 ###Average portfolio return rounded to 3 decimal points. Multiplied by 252 trading days per year
 print("SPY AVG YEARLY RETURN: " + str(round(spy_avg_return*252*100,3)) +"%")
 print("PORTFOLIO AVG YEARLY RETURN: " + str(round(portfolio_avg_return*252*100,3)) +"%")
+print("--------------------------------")
+print("PORTFOLIO COMPRISED OF: ")
+for i in portfolio:
+    print(str(round(portfolio[i]*100,2))+"% - " + i)
